@@ -1,0 +1,23 @@
+{
+  "name": "sten-sax-pase",
+  "version": "1.0.0",
+  "description": "Sten, sax, påse web api",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Alllle/sten-sax-pase.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Alllle/sten-sax-pase/issues"
+  },
+  "homepage": "https://github.com/Alllle/sten-sax-pase#readme",
+  "dependencies": {
+    "express": "^4.17.2"
+  }
+}
