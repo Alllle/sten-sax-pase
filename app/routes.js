@@ -13,6 +13,6 @@ router.post('/api/games', controller.start_game);
 
 router.post('/api/games/:id/join', controller.join_game);
 
-router.post('api/games/:id/move', controller.move);
+router.post('/api/games/:id/move', controller.move);
 
 module.exports = router;
