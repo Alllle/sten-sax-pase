@@ -3,16 +3,16 @@ const games = [];
 const utils = require('./utils');
 const crypto = require('crypto');
 
-findGame = (id) => games.find(game => game.id == id);
-error404 = (id, res) => res.status(404).send(`Game with id ${id} not found`);
-error409 = (message, res) => res.status(409).send(message);
+const findGame = (id) => games.find(game => game.id === id);
+const error404 = (id, res) => res.status(404).send(`Game with id ${id} not found`);
+const error409 = (message, res) => res.status(409).send(message);
 
 // GET /api/games/{id}
 exports.game_state = (req, res) => {
     const { id } = req.params;
-    const game = findGame(id);
+    let game = findGame(id);
     if(game?.completed) {
-        res.send(game.completed == 'draw' ? 'This round was a draw! Try again!' :
+        res.send(game.completed === 'draw' ? 'This round was a draw! Try again!' :
             game.completed + ' has won this round! Congratulations!');
     } else if(game) {
         res.send(utils.gameToString(game));
@@ -33,7 +33,7 @@ exports.start_game = (req, res) => {
 exports.join_game = (req, res) => {
     const { id } = req.params;
     const { name } = req.body;
-    const game = findGame(id);
+    let game = findGame(id);
     if(!game) {
         error404(id, res);
         return
@@ -42,7 +42,7 @@ exports.join_game = (req, res) => {
         error409('Player2 has already joined this game', res);
         return;
     }
-    game = {...game, player2: {name}};
+    game.player2.name = name;
     res.send(`You have joined game with id ${id}`)
 }
 
@@ -50,7 +50,7 @@ exports.join_game = (req, res) => {
 exports.move = (req, res) => {
     const { id } = req.params;
     const { name, move } = req.body;
-    const game = findGame(id);
+    let game = findGame(id);
     if(!game) {
         error404(id, res);
         return;

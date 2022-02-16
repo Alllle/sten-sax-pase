@@ -4,7 +4,8 @@
   "description": "Sten, sax, påse web api",
   "main": "app.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "start": "node ."
   },
   "repository": {
     "type": "git",
