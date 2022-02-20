@@ -5,7 +5,7 @@ Starta med: npm start
 Kör tester med: npm test
 
 # Curl kommandon:
-0261e1b7-1615-40f7-89a0-31963c26cdce
+
 ### Starta spel: 
 curl -d '{"name":"lisa"}' -H "Content-Type: application/json" -X POST http://localhost:8080/api/games
 ### Gå med i spel:
