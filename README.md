@@ -1,6 +1,7 @@
 # sten-sax-pase
 
 Starta med: npm start
+
 Kör tester med: npm test
 
 # Curl kommandon:
