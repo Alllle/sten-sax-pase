@@ -34,7 +34,7 @@ describe('/api/games/:id: ', () => {
                     .then(() => {
                         request(app)
                         .get(`/api/games/${response.text}`)
-                        .expect(utils.gameToString({id:response.text, player1:{name: 'lista', move: 'Rock'}}), done)
+                        .expect(utils.gameToString({id:response.text, player1:{name: 'lisa', move: 'Rock'}}), done)
                     })
                 });
     });
