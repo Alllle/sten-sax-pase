@@ -1,7 +1,24 @@
 # sten-sax-pase
 
+# Curl kommandon:
+0261e1b7-1615-40f7-89a0-31963c26cdce
+### Starta spel: 
+curl -d '{"name":"lisa"}' -H "Content-Type: application/json" -X POST http://localhost:8080/api/games
+### Gå med i spel:
+curl -d '{"name":"pelle"}' -H "Content-Type: application/json" -X POST http://localhost:8080/api/games/:id/join
 
-### Krav :
+### Gör drag:
+curl -d '{"name":"lisa", "move":"Rock"}' -H "Content-Type: application/json" -X POST http://localhost:8080/api/games/:id/move
+
+curl -d '{"name":"lisa"}' -H "Content-Type: application/json" -X POST http://localhost:8080/api/games
+
+curl -d '{"name":"pelle", "move":"Scissors"}' -H "Content-Type: application/json" -X POST http://localhost:8080/api/games/:id/move
+
+### Kolla state:
+curl http://localhost:8080/api/games/:id
+
+# krav
+
 * Ett oavgjort resultat räknas som ett resultat, det innebär att spelet inte
 behöver startas om vid oavgjort.
 * Ingen persisteringsmekanism är tillåten. Hela tillståndet (statet) ska hållas i

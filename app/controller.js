@@ -38,11 +38,11 @@ exports.join_game = (req, res) => {
         error404(id, res);
         return
     }
-    if(game.player2.name) {
+    if(game.player2?.name) {
         error409('Player2 has already joined this game', res);
         return;
     }
-    game.player2.name = name;
+    game.player2 = {name};
     res.send(`You have joined game with id ${id}`)
 }
 
@@ -56,10 +56,10 @@ exports.move = (req, res) => {
         return;
     }
 
-    if(game.player1.name === name) {
-        game.player1.move = move;
-    } else if(game.player2.name === name) {
-        game.player2.move = move;
+    if(game.player1?.name === name) {
+        game.player1 = {...game.player1, move};
+    } else if(game.player2?.name === name) {
+        game.player2 = {...game.player2, move};
     } else {
         error409('No player with that name!', res);
         return;

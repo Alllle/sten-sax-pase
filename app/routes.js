@@ -4,7 +4,7 @@ const router = express.Router();
 const controller = require('./controller');
 
 router.get('/', (req, res) => {
-    res.send('<div style="background:pink; color:green">HUR MAN SPELAR:</div>')
+    res.send('<div style="background:pink; color:green">Gå till /api/games för att starta ett spel</div>')
 });
 
 router.get('/api/games/:id', controller.game_state);
